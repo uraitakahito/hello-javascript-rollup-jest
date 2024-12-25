@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "run selected file",
+      "skipFiles": ["<node_internals>/**"],
+      // program - an absolute path to the Node.js program to debug.
+      // ${file} - the currently open file.
+      "program": "${file}"
+    },
+  ]
+}
