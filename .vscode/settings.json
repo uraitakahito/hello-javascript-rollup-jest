@@ -1,0 +1,29 @@
+// Settings file locations
+// Depending on your platform, the user settings file is located here:
+//   Windows %APPDATA%\Code\User\settings.json
+//   macOS $HOME/Library/Application\ Support/Code/User/settings.json
+//   Linux $HOME/.config/Code/User/settings.json
+{
+  //
+  // Prettier
+  //
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+
+  //
+  // ESLint
+  //
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  // https://stackoverflow.com/a/71884347
+  "eslint.format.enable": true,
+
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+}
