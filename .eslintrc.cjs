@@ -52,7 +52,7 @@ module.exports = {
        * https://eslint.org/docs/v8.x/use/configure/configuration-files#using-eslintall
        */
       extends: ['plugin:jest/all'],
-      files: ['test/**', 'test-jest/**'],
+      files: ['test/**', 'src/__tests__/*.test.js'],
       // You can omit the eslint-plugin- prefix
       plugins: ['jest'],
       rules: {
