@@ -11,6 +11,7 @@
   "license": "Apache-2.0",
   "description": "",
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "eslint": "^8.57.1",
