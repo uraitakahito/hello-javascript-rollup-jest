@@ -52,12 +52,14 @@ module.exports = {
        * https://eslint.org/docs/v8.x/use/configure/configuration-files#using-eslintall
        */
       extends: ['plugin:jest/all'],
-      files: ['test/**', 'test-jest/**'],
+      files: ['test/**', 'src/__tests__/*.test.js'],
       // You can omit the eslint-plugin- prefix
       plugins: ['jest'],
       rules: {
         // https://eslint.org/docs/v8.x/rules/no-hooks
         'jest/no-hooks': 'off',
+        // https://github.com/jest-community/eslint-plugin-jest/blob/v28.10.0/docs/rules/prefer-expect-assertions.md
+        'jest/prefer-expect-assertions': 'off',
         // https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/prefer-importing-jest-globals.md
         'jest/prefer-importing-jest-globals': 'off',
         // https://github.com/jest-community/eslint-plugin-jest/blob/v28.9.0/docs/rules/require-hook.md
@@ -88,8 +90,16 @@ module.exports = {
     'id-length': 'off',
     // https://github.com/import-js/eslint-plugin-import/blob/v2.17.2/docs/rules/extensions.md
     'import/extensions': ['error', 'always', { ignorePackages: true }],
+
     // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['rollup.*.js'], peerDependencies: false }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['test/*.js', 'src/__tests__/*.test.js', 'rollup.*.js'],
+        peerDependencies: false,
+      },
+    ],
+
     // https://eslint.org/docs/v8.x/rules/line-comment-position
     'line-comment-position': 'off',
     // https://eslint.org/docs/v8.x/rules/multiline-comment-style
